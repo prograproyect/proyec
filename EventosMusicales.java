@@ -17,6 +17,7 @@ import java.util.Date;
 public class EventosMusicales extends Eventos{
     protected static final int CANTMAX=25000;
     protected double seguro = 0;
+    private tipoMusica tp;
     
     public EventosMusicales(int codigo, String titulo, String descripcion, Date fecha, double monto) {
         super(codigo, titulo, descripcion, fecha, monto);
@@ -24,16 +25,19 @@ public class EventosMusicales extends Eventos{
     public tipoMusica InitEnum(int indexMusica){
         
         switch(indexMusica){
-            case 0:  
-                return tipoMusica.POP;
             case 1:  
-                return tipoMusica.ROCK;
-            case 2: 
-                return tipoMusica.RAP;
+                return tp=tipoMusica.POP;
+            case 2:  
+                return tp=tipoMusica.ROCK;
             case 3: 
-                return tipoMusica.CLASICA;
+                return tp=tipoMusica.RAP;
+            case 4: 
+                return tp=tipoMusica.CLASICA;
+            case 5: 
+                return tp=tipoMusica.REGGEATON;
+                    
             default:
-                return tipoMusica.OTRO;
+                return tp=tipoMusica.OTRO;
         }
     }
     
@@ -41,6 +45,9 @@ public class EventosMusicales extends Eventos{
         seguro=monto*30/100;
         return seguro;
     }
-    
+    @Override
+     public String toString(){
+        return "Evento Musical de tipo: "+tp+"\n"+super.toString();
+    }
     
 }

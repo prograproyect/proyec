@@ -51,6 +51,13 @@ public class Eventos {
         return "Codigo: "+codigo+" Titulo: "+titulo+"\nDescripcion: \n"+descripcion+"\nfecha: "+fecha+"Monto: "+monto;
     }
     
+    public boolean EventoRealizado(){
+        Date fechaActual=new Date();
+            if(fecha.getTime()<fechaActual.getTime())
+                return false;
+            return true;
+    }
+    
     
     
 }

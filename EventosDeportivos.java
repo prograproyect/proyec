@@ -13,26 +13,32 @@ import java.util.Date;
 public class EventosDeportivos extends Eventos{
     protected static final int CANTMAX=20000;
     String Equipos[]=new String[2];
-
+    Deportes tipo;
+    
+    
     public EventosDeportivos(int codigo, String titulo, String descripcion, Date fecha, double monto) {
         super(codigo, titulo, descripcion, fecha, monto);
     }
     
     public Deportes InitEnum(int indexDeporte){
-        Deportes deport;
+       
         switch(indexDeporte){
             case 0:  
-                return deport=Deportes.FUTBOL;
+                return tipo=Deportes.FUTBOL;
             case 1:  
-                return deport = Deportes.TENIS;
+                return tipo = Deportes.TENIS;
             case 2: 
-                return deport =Deportes.RUGBY;
+                return tipo =Deportes.RUGBY;
             case 3: 
-                return deport=Deportes.TENIS;
+                return tipo=Deportes.BASEBALL;
             default:
-                return deport=Deportes.NULL;
+                return tipo=Deportes.NULL;
         }
             
+    }
+    @Override
+    public String toString(){
+        return "Evento Deportivo de tipo: "+tipo +"\n"+super.toString();
     }
     
 }

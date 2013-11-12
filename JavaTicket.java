@@ -106,11 +106,36 @@ public class JavaTicket {
             
             Calendar c=Calendar.getInstance();
             c.set(anio, mes, dia);
+            int numero;
          switch(tipo){
-             case 1: return new EventosDeportivos(codigo, titulo, descripcion,c.getTime(), monto);
-             case 2: return new EventosMusicales(codigo, titulo, descripcion,c.getTime(), monto);
+             case 1: 
+                 while(true){
+                 System.out.println("Escoja uno\n1.Futbol\n2.Tenis\n3.Rugby\n4.Baseball"); 
+                 numero=lea.nextInt();
+                    if(numero >0 && numero<5){
+                        break;
+                    }
+                 }
+                EventosDeportivos d= new EventosDeportivos(codigo, titulo, descripcion,c.getTime(), monto);
+                d.InitEnum(numero);
+                return d;
+             
+             case 2: 
+                    while(true){
+                        System.out.println("Escoja una opcion\n1.Pop\n2.ROCK\n3.Rap\n4.Clasica\n5.Reggeaton\n6.Otro");
+                    numero=lea.nextInt();
+                        if(numero> 0 && numero < 7)
+                            break;
+                    }
+                    EventosMusicales em =new EventosMusicales(codigo, titulo, descripcion,c.getTime(), monto);
+                 em.InitEnum(numero);
+                 return em;
              case 3: return new EventosReligiosos(codigo, titulo, descripcion,c.getTime(), monto);
              default: return null;
             }
+    }
+    
+    private static Usuarios crearUsuario(){
+        System.out.println("Escoja el nivel de usuario:\n");
     }
 }
