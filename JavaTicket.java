@@ -20,8 +20,8 @@ public class JavaTicket {
     static Scanner lea=new Scanner(System.in);
     public static void main(String[] args) {
         
-        ArrayList <Eventos> eventos=new ArrayList<Eventos>();
-        ArrayList<Usuarios> users=new ArrayList<Usuarios>();
+        ArrayList <Eventos> eventos=new ArrayList<>();
+        ArrayList<Usuarios> users=new ArrayList<>();
         users.add(new UsuariosAdministrador("admininistrador", "admin", "supersecreto", 20));
        //boolean conectado= false;
        
